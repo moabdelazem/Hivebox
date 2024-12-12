@@ -4,6 +4,6 @@ Hivebox is a comprehensive DevOps learning project that implements modern cloud-
 
 ## DevOps Roadmap
 
-This project follows the comprehensive DevOps roadmap available at [https://roadmap.devopshive.net/](https://roadmap.devopshive.net/).
+This project follows the comprehensive DevOps roadmap available at [https://devopsroadmap.io/](https://devopsroadmap.io/).
 
 ---
