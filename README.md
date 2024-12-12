@@ -34,9 +34,9 @@ This project follows the comprehensive DevOps roadmap available at [https://devo
 - [x] Implement the code requirements.
 - [x] Create a function that print current app version. It should print the version then exit the application.
 ```go
-	mux.HandleFunc("/version", func(w http.ResponseWriter, r *http.Request) {
-		WriteJSON(w, http.StatusOK, map[string]string{"version": APP_VERSION})
-	})
+mux.HandleFunc("/version", func(w http.ResponseWriter, r *http.Request) {
+	WriteJSON(w, http.StatusOK, map[string]string{"version": APP_VERSION})
+})
 ```
 - [x] Use Semantic Versioning for the app version starting with v0.0.1.
 ```go
