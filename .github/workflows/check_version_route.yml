@@ -1,0 +1,22 @@
+name: Check on The Version Route Returned Correctly
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Build The Application
+        run: make build
+      - name: Run The Application
+        run: make run
+      - name: Check The Version Route
+        run: curl -s http://localhost:8080/version | jq -r .version

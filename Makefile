@@ -2,7 +2,8 @@ build:
 	@go build -o bin/main cmd/main.go
 
 run:
-	@go run cmd/main.go
+	@go build -o bin/main cmd/main.go
+	@./bin/main
 
 clean:
 	@rm -rf bin

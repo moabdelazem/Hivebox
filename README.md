@@ -63,15 +63,14 @@ const APP_VERSION = "v0.0.1"
     - [x] Return current average temperature based on all senseBox data
     - [x] Ensure data is no older than 1 hour
 
-- [ ] Apply Best Practices for containers (Hint: Docker Best Practices)
+- [x] Apply Best Practices for containers [Docker Best Practices! - Abouzaid](https://tech.aabouzaid.com/2021/09/docker-best-practices-workshop-presentation.html)
 
 - [ ] Create a GitHub Actions workflow for CI:
 
   - [ ] Add step to lint code and Dockerfile
   - [x] Add step to build the Docker image
-  - [ ] Add step to run unit tests
+  - [x] Add step to run unit tests
   - [ ] Setup OpenSSF Scorecard GitHub Action and fix reported issues
+  - [x] In the CI pipeline, call the /version endpoint and verify correct response
 
-- [ ] In the CI pipeline, call the /version endpoint and verify correct response
-
-- [ ] Write unit tests for all endpoints
+- [x] Write unit tests for all endpoints
