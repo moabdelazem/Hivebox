@@ -12,7 +12,7 @@ This project follows the comprehensive DevOps roadmap available at [https://devo
 
 # Project Progress
 
-## Phase 1 
+## Phase 1
 
 - [x] Understand your role in this project and how you work with other teams.
 
@@ -26,44 +26,51 @@ This project follows the comprehensive DevOps roadmap available at [https://devo
 
 - [ ] Each change should be done in order and using pull requests (don't push directly to the main branch!).
 
---- 
+---
 
 ## Phase 2
 
 - [x] Create GitHub repository for the project.
 - [x] Implement the code requirements.
 - [x] Create a function that print current app version. It should print the version then exit the application.
+
 ```go
 mux.HandleFunc("/version", func(w http.ResponseWriter, r *http.Request) {
 	WriteJSON(w, http.StatusOK, map[string]string{"version": APP_VERSION})
 })
 ```
+
 - [x] Use Semantic Versioning for the app version starting with v0.0.1.
+
 ```go
 const APP_VERSION = "v0.0.1"
 ```
+
 - [x] Create Dockerfile for the project.
 - [x] Build the Docker image and run it locally.
 - [x] Locally, run the app container and ensure that it returns the correct value.
 
 ## Phase 3
+
 - [ ] Use Conventional Commits for Git commits
 - [x] Familiarize yourself with openSenseMap API
 - [x] Implement the code requirements (We Used net/http base package [there is change of migrating to gorilla/mux])
-    - [x] Path: /version
-        - [x] Returns the version of the deployed app
-    - [x] Temperature endpoint:
-        - [x] Path: /temperature 
-        - [x] Return current average temperature based on all senseBox data
-        - [x] Ensure data is no older than 1 hour
+
+  - [x] Path: /version
+    - [x] Returns the version of the deployed app
+  - [x] Temperature endpoint:
+    - [x] Path: /temperature
+    - [x] Return current average temperature based on all senseBox data
+    - [x] Ensure data is no older than 1 hour
 
 - [ ] Apply Best Practices for containers (Hint: Docker Best Practices)
 
 - [ ] Create a GitHub Actions workflow for CI:
-    - [ ] Add step to lint code and Dockerfile
-    - [x] Add step to build the Docker image
-    - [ ] Add step to run unit tests
-    - [ ] Setup OpenSSF Scorecard GitHub Action and fix reported issues
+
+  - [ ] Add step to lint code and Dockerfile
+  - [x] Add step to build the Docker image
+  - [ ] Add step to run unit tests
+  - [ ] Setup OpenSSF Scorecard GitHub Action and fix reported issues
 
 - [ ] In the CI pipeline, call the /version endpoint and verify correct response
 

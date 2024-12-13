@@ -1,0 +1,6 @@
+*.md
+
+.github/workflows/docker-image.yml
+.github/workflows/go-test.yml
+.gitignore
+.github/workflows/
