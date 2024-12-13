@@ -10,8 +10,9 @@ import (
 )
 
 // APP_VERSION is the version of the app
-const APP_VERSION = "v0.0.1"
+const APP_VERSION = "v0.0.2"
 const OPEN_SENSE_API_ID = "5eba5fbad46fb8001b799786"
+const API_URL = "https://api.opensensemap.org/boxes/%s?format=json"
 
 // WriteJSON is a helper function to write a JSON response
 // It sets the Content-Type header to application/json and writes the response with the given status code
@@ -28,7 +29,7 @@ func GetSenseBoxData(apiId string, from time.Time) (map[string]interface{}, erro
 	// Get the data from the API
 
 	// Create the API URL
-	apiUrl := fmt.Sprintf("https://api.opensensemap.org/boxes/%s?format=json", apiId)
+	apiUrl := fmt.Sprintf(API_URL, apiId)
 
 	// Make the API call
 	resp, err := http.Get(apiUrl)
@@ -65,13 +66,10 @@ func main() {
 		WriteJSON(w, http.StatusOK, map[string]string{"status": "ok"})
 	})
 
+	// Handle the temperature route
+	// This route will return the current average temperature based on all senseBox data.
+	// The data is no older than 1 hour.
 	mux.HandleFunc("/temperature", func(w http.ResponseWriter, r *http.Request) {
-		/*
-			Requirements:
-			- Return current average temperature base on all senseBox data.
-			- Ensure that the data is no older 1 hour.
-		*/
-
 		// Get the current time
 		now := time.Now()
 
@@ -109,6 +107,7 @@ func main() {
 			}
 		}
 
+		// Check if there is any temperature data
 		if count == 0 {
 			WriteJSON(w, http.StatusInternalServerError, map[string]string{"error": "No temperature data found"})
 			return
