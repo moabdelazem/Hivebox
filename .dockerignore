@@ -4,3 +4,7 @@
 .github/workflows/go-test.yml
 .gitignore
 .github/workflows/
+
+bin/
+tmp/
+vendor/
