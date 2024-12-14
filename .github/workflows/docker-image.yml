@@ -15,5 +15,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }} --password-stdin
+
       - name: Build Docker image
         run: docker build -t moabdelazem/hivebox-api:latest .
+
+      - name: Push Docker image
+        run: docker push moabdelazem/hivebox-api:latest
