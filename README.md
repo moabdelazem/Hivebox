@@ -52,7 +52,7 @@ const APP_VERSION = "v0.0.1"
 
 ## Phase 3
 
-- [x] Use Conventional Commits for Git commits
+- [ ] Use Conventional Commits for Git commits
 - [x] Familiarize yourself with openSenseMap API
 - [x] Implement the code requirements (We Used net/http base package [there is change of migrating to gorilla/mux])
 
@@ -70,7 +70,7 @@ const APP_VERSION = "v0.0.1"
   - [x] Add step to lint code and Dockerfile
   - [x] Add step to build the Docker image
   - [x] Add step to run unit tests
-  - [x] Setup Code QL GitHub Action and fix reported issues
+  - [x] Setup OpenSSF Scorecard GitHub Action and fix reported issues
   - [x] In the CI pipeline, call the /version endpoint and verify correct response
 
 - [x] Write unit tests for all endpoints
